@@ -1,7 +1,7 @@
 # Личный проект «Типотека» [![Build status][travis-image]][travis-url]
 
 * Студент: [Евгений Мягких](https://up.htmlacademy.ru/nodejs/3/user/337099).
-* Наставник: Артём Макаров.
+* Наставник: [Артём Макаров](https://github.com/Deepsick).
 
 ---
 
