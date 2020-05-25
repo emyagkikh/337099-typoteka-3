@@ -2,6 +2,7 @@
 
 const fs = require(`fs`);
 
+const Constant = require(`../../../constant`);
 const GenerateData = require(`../data/generate-data`);
 const CommonUtils = require(`../../../utils/common-utils`);
 const GenerateUtils = require(`../../../utils/generate-utils`);
@@ -49,6 +50,7 @@ module.exports = {
 
     if (countOffer > GeneratedObjectsCount.MAX) {
       console.error(`Не больше ${GeneratedObjectsCount.MAX} публикаций`);
+      process.exit(Constant.ExitCode.SUCCESS);
     }
 
     const content = JSON.stringify(generateOffers(countOffer));
@@ -56,6 +58,7 @@ module.exports = {
     fs.writeFile(FILE_NAME, content, (err) => {
       if (err) {
         console.error(`Can't write data to file...`);
+        process.exit(Constant.ExitCode.SUCCESS);
       }
 
       console.info(`Operation success. File created.`);
