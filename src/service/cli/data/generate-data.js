@@ -47,10 +47,8 @@ const CATEGORIES = [
   `Журналы`,
 ];
 
-const GenerateData = {
+module.exports = {
   TITLES,
   SENTENCES,
   CATEGORIES,
 };
-
-module.exports = GenerateData;

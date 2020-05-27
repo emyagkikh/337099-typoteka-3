@@ -1,6 +1,6 @@
 'use strict';
 
-const CommonUtils = require(`./common-utils`);
+const {getRandomInt} = require(`./common-utils`);
 
 const DATE_MOUNT_CORRECTION_NUMBER = 1;
 const DATE_FILLING_CORRECTION_CHARACTER = `0`;
@@ -18,14 +18,10 @@ const formatArticleDate = (date) => {
 };
 
 const generateArticleDate = (currentDateTime, maxDateRange) => {
-  const dateRange = CommonUtils.getRandomInt(0, maxDateRange);
+  const dateRange = getRandomInt(0, maxDateRange);
   const articleDate = new Date(currentDateTime - dateRange);
 
   return formatArticleDate(articleDate);
 };
 
-const GenerateUtils = {
-  generateArticleDate,
-};
-
-module.exports = GenerateUtils;
+module.exports = generateArticleDate;
