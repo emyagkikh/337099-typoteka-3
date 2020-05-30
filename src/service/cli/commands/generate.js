@@ -34,15 +34,13 @@ const generateOffers = (count) => (
     const fulltextAmountIndex = getRandomInt(FULLTEXT_MIN_SENTENCES_AMOUNT, SENTENCES.length - 1);
     const categoryAmountIndex = getRandomInt(CATEGORY_MIN_ITEMS_AMOUNT, CATEGORIES.length - 1);
 
-    return (
-      {
-        title: TITLES[getRandomInt(0, TITLES.length - 1)],
-        createdDate: generateArticleDate(currentDateTime, maxAvailableDayTimeRange),
-        announce: shuffleArray(SENTENCES).slice(0, announceAmountIndex).join(` `),
-        fullText: shuffleArray(SENTENCES).slice(0, fulltextAmountIndex).join(` `),
-        category: shuffleArray(CATEGORIES).slice(0, categoryAmountIndex),
-      }
-    );
+    return {
+      title: TITLES[getRandomInt(0, TITLES.length - 1)],
+      createdDate: generateArticleDate(currentDateTime, maxAvailableDayTimeRange),
+      announce: shuffleArray(SENTENCES).slice(0, announceAmountIndex).join(` `),
+      fullText: shuffleArray(SENTENCES).slice(0, fulltextAmountIndex).join(` `),
+      category: shuffleArray(CATEGORIES).slice(0, categoryAmountIndex),
+    };
   })
 );
 
